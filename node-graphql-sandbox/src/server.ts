@@ -30,7 +30,7 @@ app.all(
 
 // Serve the GraphiQL IDE
 // It provides a nice interface to test the GraphQL API
-app.get("/", (_req, res) => {
+app.get("/", (_req: any, res: any) => {
   res.type("html");
   res.end(ruruHTML({ endpoint: "/graphql" }));
 });

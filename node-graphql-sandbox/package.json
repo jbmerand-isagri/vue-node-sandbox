@@ -9,6 +9,7 @@
   "author": "Jean-Baptiste Mérand",
   "license": "MIT",
   "dependencies": {
+    "@prisma/client": "^5.19.1",
     "express": "^4.21.0",
     "graphql": "^16.9.0",
     "graphql-http": "^1.22.1",

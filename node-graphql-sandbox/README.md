@@ -14,6 +14,8 @@
 
 `npm install prisma --save-dev`
 
+`npm install @prisma/client`
+
 ## Use Postgresql with docker
 
 `docker pull postgres:16.4-alpine3.20`
@@ -31,6 +33,20 @@
 "Prisma introspects the database (i.e. it reads the database schema). It then translates the database schema from SQL into a data model in your Prisma schema."
 
 `npx prisma db pull`
+
+### Baseline
+
+`npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/migrations/0_init/migration.sql`
+
+`npx prisma migrate resolve --applied 0_init`
+
+## Use Prisma Client
+
+`npx prisma generate`
+
+`npx prisma migrate dev --name tags-model`
+
+`npx prisma studio`
 
 ## Feed database
 
@@ -60,4 +76,4 @@ CREATE TABLE participations (
 
 ## Start server
 
-`node server.js`
+`node src/server.ts`
