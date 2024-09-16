@@ -51,8 +51,12 @@ export const schema = buildSchema(`
 
   type Mutation {
     createUser(username: String!): User!
+    deleteUser(id: Int!): User!
+
     createSession(sessionName: String!, createdBy: Int!): Session!
+
     createStory(sessionId: Int!, title: String!, description: String): Story!
+    
     createVote(storyId: Int!, userId: Int!, voteValue: Int!): Vote!
   }
 `);

@@ -144,7 +144,7 @@ query {
 }
 ```
 
-#### Create a new user :
+#### Create a new user
 
 ```graphql
 mutation CreateUser($username: String!) {
@@ -154,10 +154,28 @@ mutation CreateUser($username: String!) {
 }
 ```
 
-With the following variable :
+With the following variable:
 
 ```json
 {
   "username": "Joe"
+}
+```
+
+#### Delete one user
+
+```graphql
+mutation DeleteUser($userId: Int!) {
+  deleteUser(id: $userId) {
+    username
+  }
+}
+```
+
+With the following variable:
+
+```json
+{
+  "userId": 1
 }
 ```

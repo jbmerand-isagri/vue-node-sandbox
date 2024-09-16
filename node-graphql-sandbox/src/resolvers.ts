@@ -14,15 +14,24 @@ const prisma = new PrismaClient();
  * @property {Function} createVote - Creates a new vote.
  */
 export const root = {
+    // QUERIES
     users: async () => await prisma.user.findMany(),
     sessions: async () => await prisma.session.findMany(),
     stories: async ({ sessionId }: { sessionId: number; }) => await prisma.story.findMany({ where: { sessionId } }),
 
+    // MUTATIONS
+    // users
     createUser: async ({ username }: { username: string; }) => {
         return await prisma.user.create({
             data: { username },
         });
     },
+    deleteUser: async ({ id }: { id: number; }) => {
+        return await prisma.user.delete({
+            where: { id },
+        });
+    },
+
     createSession: async ({ sessionName, createdBy }: { sessionName: string, createdBy: number; }) => {
         return await prisma.session.create({
             data: { sessionName, createdBy },
