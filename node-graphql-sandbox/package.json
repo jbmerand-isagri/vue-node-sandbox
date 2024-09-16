@@ -4,6 +4,7 @@
   "description": "A sandbox to try nodejs with graphql",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node src/server.ts",
     "test": "npm test"
   },
   "author": "Jean-Baptiste Mérand",
@@ -14,9 +15,12 @@
     "graphql": "^16.9.0",
     "graphql-http": "^1.22.1",
     "ruru": "^2.0.0-beta.13",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
     "prisma": "^5.19.1"
   }
 }

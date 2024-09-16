@@ -10,6 +10,10 @@
 
 `npm install typescript`
 
+`npm install ts-node`
+
+`npm install @types/node --save-dev`
+
 `npm install express graphql-http graphql`
 
 `npm install ruru`
@@ -17,6 +21,16 @@
 `npm install prisma --save-dev`
 
 `npm install @prisma/client`
+
+## Definitions
+
+- Server: Sets up a basic HTTP server that routes requests to the GraphQL handler.
+
+- Resolvers: Implements the logic for fetching and manipulating data.
+
+### Under graphql
+
+- Schema: Defines the GraphQL types, queries, and mutations.
 
 ## Use Postgresql with docker
 
@@ -44,13 +58,21 @@
 
 ## Use Prisma Client
 
+Reads the prisma schema and setting it up
+
 `npx prisma generate`
+
+Create and apply migration on database
 
 `npx prisma migrate dev --name tags-model`
 
+Only create the sql migration file
+
+`npx prisma migrate dev --create-only`
+
 `npx prisma studio`
 
-## Feed database
+## Create database to try Prisma's baseline
 
 ```postgresql
 CREATE TABLE players (
@@ -78,4 +100,64 @@ CREATE TABLE participations (
 
 ## Start server
 
+Use one of the following command.
+
+`npm run start`
+
 `node src/server.ts`
+
+Then you can go to [http://localhost:4000/](http://localhost:4000/) to use the ruru UI to try graphql queries.
+
+### Examples of queries
+
+#### Get users and sessions
+
+```graphql
+{
+  users {
+    id
+    username
+    createdAt
+  }
+  sessions {
+    id
+    sessionName
+    createdAt
+  }
+}
+```
+
+or
+
+```graphql
+query {
+  users {
+    id
+    username
+    createdAt
+  }
+  sessions {
+    id
+    sessionName
+    createdAt
+  }
+}
+```
+
+#### Create a new user :
+
+```graphql
+mutation CreateUser($username: String!) {
+  createUser(username: $username) {
+    username
+  }
+}
+```
+
+With the following variable :
+
+```json
+{
+  "username": "Joe"
+}
+```

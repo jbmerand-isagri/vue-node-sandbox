@@ -1,25 +1,17 @@
-const express = require("express");
-const { createHandler } = require("graphql-http/lib/use/express");
-const { buildSchema } = require("graphql");
+import { schema } from "./graphql/schema";
+import { root } from "./resolvers";
+
+import express from "express";
+import { createHandler } from "graphql-http/lib/use/express";
+
 const { ruruHTML } = require("ruru/server");
-
-// Construct a schema, using GraphQL schema language
-const schema = buildSchema(`
-    type Query {
-        hello: String
-    }
-`);
-
-// The root provides a resolver function for each API endpoint
-const root = {
-  hello() {
-    return "Hello world!";
-  },
-};
 
 const app = express();
 
 // Create and use the GraphQL handler
+// It will use the schema and root resolver object
+// to handle incoming GraphQL queries and mutations
+// The handler will be available at the /graphql endpoint
 app.all(
   "/graphql",
   createHandler({
