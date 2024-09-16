@@ -2,26 +2,22 @@ import { PrismaClient, Prisma } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-const playerData: Prisma.playersCreateInput[] = [
+const userData: Prisma.UserCreateInput[] = [
     {
-        name: 'Alice',
-        email: 'alice@mail.com',
-        created_at: new Date(),
+        username: 'Alice',
     },
     {
-        name: 'Bob',
-        email: 'bob@mail.com',
-        created_at: new Date(),
+        username: 'Bob',
     }
 ];
 
 async function main() {
     console.log(`Start seeding ...`);
-    for (const p of playerData) {
-        const player = await prisma.players.create({
-            data: p,
+    for (const u of userData) {
+        const user = await prisma.user.create({
+            data: u,
         });
-        console.log(`Created player with id: ${player.id}`);
+        console.log(`Created user with id: ${user.id}`);
     }
     console.log(`Seeding finished.`);
 }

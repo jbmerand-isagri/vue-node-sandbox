@@ -1,3 +1,5 @@
+# Nodejs app with graphql & prisma
+
 ## Installation
 
 `nvm use 18.20.4`
