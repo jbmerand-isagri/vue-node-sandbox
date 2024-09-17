@@ -26,33 +26,43 @@
 
 `npm i @prisma/client`
 
-### Tests
+#### Tests
 
 `npm i -D chai mocha sinon`
 
 `npm i -D @types/chai @types/mocha @types/sinon`
 
-### Linter
+#### Linter
 
 `npm i -D eslint`
 
 `npx eslint --init`
 
-## Definitions
+## Definition
 
-- Server: Sets up a basic HTTP server that routes requests to the GraphQL handler.
+- Express: A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-- Resolvers: Implements the logic for fetching and manipulating data.
+- GraphQL: A query language for your API, and a server-side runtime for executing queries by using a type system you define for your data.
 
-### Under graphql
+- GraphQL Schema: A blueprint that defines the structure of your GraphQL API, including types, queries, mutations, and their relationships.
 
-- Schema: Defines the GraphQL types, queries, and mutations.
+- Query: In GraphQL, a query is a read-only operation that requests data from the server, specifying exactly what data is needed.
+
+- Mutation: In GraphQL, a mutation is an operation that allows clients to modify server-side data, such as creating, updating, or deleting records.
+
+- Prisma ORM: An open-source database toolkit that simplifies database access with an auto-generated and type-safe query builder for TypeScript and Node.js.
+
+- Prisma Schema: A declarative configuration file used to define database models and relationships in Prisma.
+
+- Prisma Migrations: A system for managing and applying changes to database schema over time, ensuring consistency and version control.
+
+- Resolver: A function in GraphQL that resolves a value for a type or field in the schema, handling the logic for fetching or computing the data requested by a query or mutation.
 
 ## Use Postgresql with docker
 
 `docker pull postgres:16.4-alpine3.20`
 
-`docker run --name postgres-vue-node-sandbox -e POSTGRES_PASSWORD=pwd -d postgres:16.4-alpine3.20`
+`docker run ...`
 
 ## Use Prisma ORM
 
@@ -211,3 +221,5 @@ The following line indicates that Mocha should use ts-node with ECMAScript modul
 `ts-node` performs JIT transformations, converting TypeScript into JavaScript at runtime. This allows you to execute TypeScript directly in Node.js without the need for a separate compilation step
 
 `ts-node/esm` is a loader provided by ts-node that enables to run TypeScript files directly in Node.js without precompiling them
+
+`ESLint` is a tool for identifying and fixing problems in JavaScript code, ensuring code quality and consistency.
