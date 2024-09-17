@@ -201,3 +201,9 @@ The following line indicates that Mocha should use ts-node with ECMAScript modul
 ```json
 "loader": "ts-node/esm",
 ```
+
+## Libs
+
+`ts-node` performs JIT transformations, converting TypeScript into JavaScript at runtime. This allows you to execute TypeScript directly in Node.js without the need for a separate compilation step
+
+`ts-node/esm` is a loader provided by ts-node that enables to run TypeScript files directly in Node.js without precompiling them

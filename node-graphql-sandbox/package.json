@@ -6,8 +6,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "src/server.ts",
+    "seed": "npx prisma db seed",
+    "start": "node --loader ts-node/esm --inspect src/server.ts",
     "test": "mocha"
+  },
+  "prisma": {
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
   },
   "author": "Jean-Baptiste Mérand",
   "license": "MIT",

@@ -1,10 +1,10 @@
-import { schema } from "./graphql/schema";
-import { root } from "./resolvers";
+import { schema } from "./graphql/schema.js";
+import { root } from "./resolvers.js";
 
 import express from "express";
 import { createHandler } from "graphql-http/lib/use/express";
 
-const { ruruHTML } = require("ruru/server");
+import { ruruHTML } from "ruru/server";
 
 const app = express();
 
