@@ -70,17 +70,11 @@
 
 ## Use Prisma Client
 
-Reads the prisma schema and setting it up
+`npx prisma generate` : Reads the prisma schema and setting it up
 
-`npx prisma generate`
+`npx prisma migrate dev --name tags-model` : Create and apply migration on database
 
-Create and apply migration on database
-
-`npx prisma migrate dev --name tags-model`
-
-Only create the sql migration file
-
-`npx prisma migrate dev --create-only`
+`npx prisma migrate dev --create-only` : Only create the sql migration file
 
 `npx prisma studio`
 
@@ -115,8 +109,6 @@ CREATE TABLE participations (
 Use one of the following command.
 
 `npm run start`
-
-`node src/server.ts`
 
 Then you can go to [http://localhost:4000/](http://localhost:4000/) to use the ruru UI to try graphql queries.
 
