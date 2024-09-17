@@ -6,25 +6,33 @@
 
 `npm init`
 
-`npm install graphql`
+`npm i graphql`
 
-`npm i --save-dev typescript`
+`npm i -D typescript`
 
-`npm i --save-dev @types/node`
+`npm i -D ts-node`
+
+`npm i -D @types/node`
 
 `npm i express graphql-http graphql`
 
 `npm i ruru`
 
-`npm i --save-dev prisma`
+`npm i -D prisma`
 
 `npm i @prisma/client`
 
-`npm i --save-dev chai mocha sinon`
+### Tests
 
-`npm i --save-dev @types/chai @types/mocha @types/sinon`
+`npm i -D chai mocha sinon`
 
-`npm i --save-dev ts-node`
+`npm i -D @types/chai @types/mocha @types/sinon`
+
+### Linter
+
+`npm i -D eslint`
+
+`npx eslint --init`
 
 ## Definitions
 

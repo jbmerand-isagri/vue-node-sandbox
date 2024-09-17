@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { Prisma, PrismaClient } from '@prisma/client';
 import { DefaultArgs } from '@prisma/client/runtime/library';
 import { expect } from 'chai';
@@ -7,7 +8,7 @@ export const prisma = new PrismaClient();
 
 // runs before each test in this block
 beforeEach(async function () {
-    //await prisma.user.deleteMany({});
+    await prisma.user.deleteMany({});
 });
 
 // runs once after the last test in this block
@@ -24,7 +25,6 @@ describe('Prisma', async function () {
             const user = await prisma.user.create(userData);
 
             expect(user.username).equal('John');
-
             expect(user.createdAt).to.be.a('Date').and.be.ok;
             expect(user.updatedAt).to.be.a('Date').and.be.ok;
             expect(user.id).to.be.a('number').and.be.ok;
