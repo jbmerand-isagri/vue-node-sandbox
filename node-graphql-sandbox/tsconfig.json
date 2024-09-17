@@ -1,15 +1,18 @@
 {
     "compilerOptions": {
+        "sourceMap": true,
         "forceConsistentCasingInFileNames": true,
         "outDir": "dist",
-        "rootDir": "src",
+        "module": "NodeNext",
         "esModuleInterop": true,
-        "lib": [
-            "esnext"
-        ],
+        "target": "ESNext",
         "strict": true,
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "test/**/*"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

@@ -8,19 +8,23 @@
 
 `npm install graphql`
 
-`npm install typescript`
+`npm i --save-dev typescript`
 
-`npm install ts-node`
+`npm i --save-dev @types/node`
 
-`npm install @types/node --save-dev`
+`npm i express graphql-http graphql`
 
-`npm install express graphql-http graphql`
+`npm i ruru`
 
-`npm install ruru`
+`npm i --save-dev prisma`
 
-`npm install prisma --save-dev`
+`npm i @prisma/client`
 
-`npm install @prisma/client`
+`npm i --save-dev chai mocha sinon`
+
+`npm i --save-dev @types/chai @types/mocha @types/sinon`
+
+`npm i --save-dev ts-node`
 
 ## Definitions
 
@@ -178,4 +182,22 @@ With the following variable:
 {
   "userId": 1
 }
+```
+
+## Tests
+
+Mocha: Manages the execution of tests and provides a framework for organizing them.
+
+Chai: Provides the assertions to verify the outcomes of the tests.
+
+sinon : Used for mocking dependencies.
+
+### Mocha
+
+`.mocharc.json` is the configuration file of Mocha.
+
+The following line indicates that Mocha should use ts-node with ECMAScript modules (ESM) support as the loader for running tests.
+
+```json
+"loader": "ts-node/esm",
 ```

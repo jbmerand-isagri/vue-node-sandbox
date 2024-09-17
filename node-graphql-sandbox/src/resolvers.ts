@@ -4,14 +4,6 @@ const prisma = new PrismaClient();
 
 /**
  * Root resolver object for GraphQL queries and mutations.
- * @typedef {Object} RootResolver
- * @property {Function} users - Retrieves all users.
- * @property {Function} sessions - Retrieves all sessions.
- * @property {Function} stories - Retrieves all stories for a given session.
- * @property {Function} createUser - Creates a new user.
- * @property {Function} createSession - Creates a new session.
- * @property {Function} createStory - Creates a new story.
- * @property {Function} createVote - Creates a new vote.
  */
 export const root = {
     // QUERIES
