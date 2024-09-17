@@ -4,6 +4,10 @@
 
 `nvm use 18.20.4`
 
+`npm i`
+
+### Previously performed installations
+
 `npm init`
 
 `npm i graphql`
