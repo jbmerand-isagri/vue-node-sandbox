@@ -12,6 +12,8 @@
 
 `yarn add graphql graphql-tag @apollo/client`
 
+`yarn add -D eslint eslint-plugin-vue`
+
 ## Commands
 
 `yarn dev` : compile and Hot-Reload for Development

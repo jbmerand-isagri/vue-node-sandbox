@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "sdras.vue-vscode-snippets",
+        "vue.volar",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "apollographql.vscode-apollo",
+        "graphql.vscode-graphql",
+        "graphql.vscode-graphql-syntax",
+        "yoavbls.pretty-ts-errors",
+        "prisma.prisma"
+    ]
+}

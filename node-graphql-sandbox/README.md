@@ -60,9 +60,25 @@
 
 ## Use Postgresql with docker
 
-`docker pull postgres:16.4-alpine3.20`
+`wsl`
 
-`docker run ...`
+`sudo docker pull postgres:16.4-alpine3.20`
+
+`sudo docker run --name postgres_16_4_alpine -e POSTGRES_PASSWORD=mon_mot_de_passe_postgres -d -p 5432:5432 postgres:16.4-alpine3.20`
+
+`sudo docker run --name pgadmin_4 -p 15432:80 -e "mon@adresse.email" -e "PGADMIN_DEFAULT_PASSWORD=mon_mot_de_passe_pgadmin" -d dpage/pgadmin4`
+
+### How to setup the database
+
+Open pgAdmin : [http://localhost:15432](http://localhost:15432)
+
+Click on "Add New Server"
+
+In tab General: - Name Server
+
+In tab Connection : - Host name/adress 172.17.0.1 - Port 5432 - Username postgres - Password
+
+Click on "Save"
 
 ## Use Prisma ORM
 
@@ -198,7 +214,7 @@ With the following variable:
 }
 ```
 
-## Tests
+## Test libraries
 
 Mocha: Manages the execution of tests and provides a framework for organizing them.
 
