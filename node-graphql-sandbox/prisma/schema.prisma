@@ -24,7 +24,7 @@ model Session {
   createdBy    Int
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  user         User          @relation("UserSessions", fields: [createdBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  user         User          @relation(fields: [createdBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
   participants Participant[]
   stories      Story[]
 }
@@ -46,7 +46,7 @@ model User {
   username    String        @unique @db.VarChar(100)
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
-  sessions    Session[]     @relation("UserSessions")
+  sessions    Session[]
   votes       Vote[]
   Participant Participant[]
 }

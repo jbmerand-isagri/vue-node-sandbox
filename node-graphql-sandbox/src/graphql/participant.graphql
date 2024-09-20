@@ -1,0 +1,6 @@
+type Participant {
+  id: Int!
+  session: Session!
+  user: User!
+  joinedAt: String!
+}

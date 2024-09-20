@@ -1,62 +1,15 @@
-import { buildSchema } from "graphql";
+import { loadFilesSync } from '@graphql-tools/load-files';
+import { mergeTypeDefs } from '@graphql-tools/merge';
+import { root } from '../resolvers.js';
+import { makeExecutableSchema } from '@graphql-tools/schema';
 
 /**
  * Represents the GraphQL schema for the application.
  */
-export const schema = buildSchema(`
-  type Participant {
-    id: Int!
-    session: Session!
-    user: User!
-    joinedAt: String!
-  }
+// export const schema = buildSchema(
 
-  type Session {
-    id: Int!
-    sessionName: String!
-    createdBy: User!
-    createdAt: String!
-    updatedAt: String!
-  }
+const types = loadFilesSync(`.`, { extensions: ['graphql'] });
 
-  type Story {
-    id: Int!
-    session: Session!
-    title: String!
-    description: String
-    createdAt: String!
-    updatedAt: String!
-  }
+const typeDefs = mergeTypeDefs(types);
 
-  type User {
-    id: Int!
-    username: String!
-    createdAt: String!
-    updatedAt: String!
-  }
-
-  type Vote {
-    id: Int!
-    story: Story!
-    user: User!
-    voteValue: Int!
-    votedAt: String!
-  }
-
-  type Query {
-    users: [User!]!
-    sessions: [Session!]!
-    stories(sessionId: Int!): [Story!]!
-  }
-
-  type Mutation {
-    createUser(username: String!): User!
-    deleteUser(id: Int!): User!
-
-    createSession(sessionName: String!, createdBy: Int!): Session!
-
-    createStory(sessionId: Int!, title: String!, description: String): Story!
-    
-    createVote(storyId: Int!, userId: Int!, voteValue: Int!): Vote!
-  }
-`);
+export const schema = makeExecutableSchema({ typeDefs, resolvers: root });

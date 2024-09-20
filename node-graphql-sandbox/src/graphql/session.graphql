@@ -1,0 +1,18 @@
+type Session {
+  id: Int!
+  sessionName: String!
+  createdBy: User!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  sessions: [Session!]!
+  session(id: ID!): Session
+}
+
+type Mutation {
+  createSession(sessionName: String!, createdBy: Int!): Session!
+  updateSession(id: Int!, sessionName: String!, createdBy: Int!): Session!
+  deleteSession(id: Int!): Session!
+}

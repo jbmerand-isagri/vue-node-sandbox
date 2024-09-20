@@ -26,6 +26,8 @@
 
 `npm i @prisma/client`
 
+`npm i @graphql-tools/load-files @graphql-tools/merge @graphql-tools/schema`
+
 #### Tests
 
 `npm i -D chai mocha sinon`

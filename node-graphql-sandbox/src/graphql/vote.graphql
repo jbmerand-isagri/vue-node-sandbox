@@ -1,0 +1,18 @@
+type Vote {
+  id: Int!
+  story: Story!
+  user: User!
+  voteValue: Int!
+  votedAt: String!
+}
+
+type Query {
+  votes: [Vote!]!
+  vote(id: ID!): Vote
+}
+
+type Mutation {
+  createVote(story: Int!, user: Int!, voteValue: Int!): Vote!
+  updateVote(id: Int!, story: Int!, user: Int!, voteValue: Int!): Vote!
+  deleteVote(id: Int!): Vote!
+}

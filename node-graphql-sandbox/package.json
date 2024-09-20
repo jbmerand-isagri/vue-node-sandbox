@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "seed": "npx prisma db seed",
     "start": "node --loader ts-node/esm --inspect src/server.ts",
+    "db-ui": "npx prisma studio",
     "test": "mocha"
   },
   "prisma": {
@@ -17,6 +18,9 @@
   "author": "Jean-Baptiste Mérand",
   "license": "MIT",
   "dependencies": {
+    "@graphql-tools/load-files": "^7.0.0",
+    "@graphql-tools/merge": "^9.0.7",
+    "@graphql-tools/schema": "^10.0.6",
     "@prisma/client": "^5.19.1",
     "express": "^4.21.0",
     "graphql": "^16.9.0",

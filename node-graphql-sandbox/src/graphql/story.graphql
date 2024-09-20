@@ -1,0 +1,24 @@
+type Story {
+  id: Int!
+  session: Session!
+  title: String!
+  description: String
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  stories: [Story!]!
+  story(id: ID!): Story
+}
+
+type Mutation {
+  createStory(session: Int!, title: String!, description: String): Story!
+  updateStory(
+    id: Int!
+    session: Int!
+    title: String!
+    description: String
+  ): Story!
+  deleteStory(id: Int!): Story!
+}
