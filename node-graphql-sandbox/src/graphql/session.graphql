@@ -12,7 +12,7 @@ type Query {
 }
 
 type Mutation {
-  createSession(sessionName: String!, createdBy: Int!): Session!
+  createSession(sessionName: String!, authorUsername: String!): Session!
   updateSession(id: Int!, sessionName: String!, createdBy: Int!): Session!
   deleteSession(id: Int!): Session!
 }

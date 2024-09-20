@@ -18,15 +18,23 @@
 
 `npm i -D @types/node`
 
-`npm i express graphql-http graphql`
-
-`npm i ruru`
-
 `npm i -D prisma`
 
 `npm i @prisma/client`
 
+Useful to split the GraphQL schema into multiple files:
+
 `npm i @graphql-tools/load-files @graphql-tools/merge @graphql-tools/schema`
+
+First I tried express with ruru
+
+`npm i express graphql-http graphql`
+
+`npm i ruru`
+
+Then I uninstalled express and ruru to try apollo-server
+
+`npm i @apollo/server`
 
 #### Tests
 
@@ -149,7 +157,7 @@ Then you can go to [http://localhost:4000/](http://localhost:4000/) to use the r
 #### Get users and sessions
 
 ```graphql
-{
+query {
   users {
     id
     username
@@ -163,20 +171,38 @@ Then you can go to [http://localhost:4000/](http://localhost:4000/) to use the r
 }
 ```
 
-or
+"query" can be empty
+
+#### Get sessions with their author
 
 ```graphql
 query {
-  users {
-    id
-    username
-    createdAt
-  }
   sessions {
     id
     sessionName
-    createdAt
+    createdBy {
+      username
+    }
   }
+}
+```
+
+#### Create a new Session
+
+```graphql
+mutation CreateSession($sessionName: String!, $authorUsername: String!) {
+  createSession(sessionName: $sessionName, authorUsername: $authorUsername) {
+    sessionName
+  }
+}
+```
+
+Variables :
+
+```json
+{
+  "sessionName": "MA SUPER SESSION !",
+  "authorUsername": "Mario"
 }
 ```
 

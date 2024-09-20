@@ -18,14 +18,13 @@
   "author": "Jean-Baptiste Mérand",
   "license": "MIT",
   "dependencies": {
+    "@apollo/server": "^4.11.0",
     "@graphql-tools/load-files": "^7.0.0",
     "@graphql-tools/merge": "^9.0.7",
     "@graphql-tools/schema": "^10.0.6",
     "@prisma/client": "^5.19.1",
-    "express": "^4.21.0",
     "graphql": "^16.9.0",
-    "graphql-http": "^1.22.1",
-    "ruru": "^2.0.0-beta.13"
+    "graphql-http": "^1.22.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
