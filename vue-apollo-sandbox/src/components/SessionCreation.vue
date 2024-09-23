@@ -30,10 +30,15 @@
 </template>
 
 <script setup lang="ts">
+import apolloClient from '@/graphql/apollo-client'
+import { CREATE_SESSION } from '@/graphql/session'
+import { provideApolloClient, useMutation } from '@vue/apollo-composable'
 import { ref } from 'vue'
 
 let sessioName = ref('')
 let username = ref('')
+
+const client = provideApolloClient(apolloClient)
 
 const rules = {
   required: (text: string) => !!text || 'Champ requis'
@@ -45,5 +50,14 @@ const isValid = () => {
 
 const handleCreation = () => {
   console.log('Creating session with name: ', sessioName.value, ' and username: ', username.value)
+
+  const createSessionMutation = useMutation(CREATE_SESSION, {
+    variables: {
+      sessionName: sessioName.value,
+      authorUsername: username.value
+    }
+  })
+
+  createSessionMutation.mutate()
 }
 </script>

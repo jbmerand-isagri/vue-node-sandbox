@@ -653,6 +653,22 @@
     path-browserify "^1.0.1"
     vscode-uri "^3.0.8"
 
+"@vue/apollo-composable@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@vue/apollo-composable/-/apollo-composable-4.2.1.tgz#acc46e71f52bec60ec91fd059753a3cdfee75b86"
+  integrity sha512-9PZ/pSl4Miqgg9uUOkAbg38ALyjm1j7QL9iZeppgUCBcJI3Sa7SA3LOCB2IV1jYsLjXuKVMHh2cwHJE1wzhfSA==
+  dependencies:
+    throttle-debounce "^5.0.0"
+    ts-essentials "^9.4.0"
+    vue-demi "^0.14.6"
+
+"@vue/apollo-option@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@vue/apollo-option/-/apollo-option-4.2.0.tgz#c81dd22198680953063276a83a4ebcb1baf9bd93"
+  integrity sha512-JYqtSY+dHoOM10o2L+EVY+nDxsmT9lb1Z3Z7VBzBQ3f0np+A1TFldZw9gYNbSS6QYgyGw376+Z/EtOqJ9JoaZw==
+  dependencies:
+    throttle-debounce "^5.0.0"
+
 "@vue/compiler-core@3.5.6":
   version "3.5.6"
   resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.5.6.tgz#4a771c738fe745b61b963c41077af1405200db33"
@@ -3312,6 +3328,11 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
+throttle-debounce@^5.0.0:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-5.0.2.tgz#ec5549d84e053f043c9fd0f2a6dd892ff84456b1"
+  integrity sha512-B71/4oyj61iNH0KeCamLuE2rmKuTO5byTOSVwECM5FA7TiAiAW+UqTKZ9ERueC4qvgSttUhdmq1mXC3kJqGX7A==
+
 throttleit@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/throttleit/-/throttleit-1.0.1.tgz#304ec51631c3b770c65c6c6f76938b384000f4d5"
@@ -3375,6 +3396,11 @@ ts-api-utils@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.3.0.tgz#4b490e27129f1e8e686b45cc4ab63714dc60eea1"
   integrity sha512-UQMIo7pb8WRomKR1/+MFVLTroIvDVtMX3K6OUir8ynLyzB8Jeriont2bTAtmNPa1ekAgN7YPDyf6V+ygrdU+eQ==
+
+ts-essentials@^9.4.0:
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-9.4.2.tgz#6d4bd23b46b61bf3e031816cc887e839eb62c33c"
+  integrity sha512-mB/cDhOvD7pg3YCLk2rOtejHjjdSi9in/IBYE13S+8WA5FBSraYf4V/ws55uvs0IvQ/l0wBOlXy5yBNZ9Bl8ZQ==
 
 ts-invariant@^0.10.3:
   version "0.10.3"
@@ -3544,7 +3570,7 @@ vue-component-type-helpers@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-component-type-helpers/-/vue-component-type-helpers-2.1.6.tgz#f350515b252ed9e76960ac51f135636f8baef3fe"
   integrity sha512-ng11B8B/ZADUMMOsRbqv0arc442q7lifSubD0v8oDXIFoMg/mXwAPUunrroIDkY+mcD0dHKccdaznSVp8EoX3w==
 
-vue-demi@^0.14.10:
+vue-demi@^0.14.10, vue-demi@^0.14.6:
   version "0.14.10"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.10.tgz#afc78de3d6f9e11bf78c55e8510ee12814522f04"
   integrity sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==
@@ -3578,7 +3604,7 @@ vue-tsc@^2.0.21:
     "@vue/language-core" "2.1.6"
     semver "^7.5.4"
 
-vue@^3.4.29:
+vue@3.5.6:
   version "3.5.6"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.5.6.tgz#025b1d411627883577457797eff93e85e61ef9c1"
   integrity sha512-zv+20E2VIYbcJOzJPUWp03NOGFhMmpCKOfSxVTmCYyYFFko48H9tmuQFzYj7tu4qX1AeXlp9DmhIP89/sSxxhw==

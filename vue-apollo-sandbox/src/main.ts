@@ -1,7 +1,7 @@
 import './assets/main.css'
 
 import { createPinia } from 'pinia'
-import { createApp } from 'vue'
+import { createApp, h } from 'vue'
 
 // Vuetify
 import { createVuetify } from 'vuetify'
@@ -12,6 +12,8 @@ import 'vuetify/styles'
 // Components
 import App from './App.vue'
 import router from './router'
+import { DefaultApolloClient } from '@vue/apollo-composable'
+import apolloClient from './graphql/apollo-client'
 
 const vuetify = createVuetify({
   theme: {
@@ -21,10 +23,13 @@ const vuetify = createVuetify({
   directives
 })
 
-const app = createApp(App)
+const app = createApp({
+  render: () => h(App)
+})
 
 app.use(createPinia())
 app.use(vuetify)
 app.use(router)
+app.provide(DefaultApolloClient, apolloClient) // Provide Apollo Client to the app
 
 app.mount('#app')
